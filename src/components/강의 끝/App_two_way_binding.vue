@@ -2,7 +2,9 @@
 	<div>
 		<h2>input value</h2>
 		<!-- <input type="text" v-model.lazy="inputValue" /> -->
-		<!-- <input type="text" v-model.number="inputValue" /> -->
+        <!-- 숫자 자동 형변환 가능 -->
+		<!-- <input type="text" v-model.number="inputValue" /> --> 
+        <!-- 자동으로 앞뒤 공백을 제거 -->
 		<input type="text" v-model.trim="inputValue" />
 
 		<!-- :value="inputValue"
@@ -10,14 +12,21 @@
 		<div>{{ inputValue }}</div>
 		<div>{{ typeof inputValue }}</div>
 
+		<hr>
 		<h2>textarea value</h2>
 		<textarea v-model="textareaValue"></textarea>
 		<!-- :value="textareaValue"
 			@input="event => (textareaValue = event.target.value)" -->
 		<div>{{ textareaValue }}</div>
 
+		<hr>
 		<h2>checkbox value</h2>
 		<label for="checkbox">{{ checkboxValue }}</label>
+		<!-- <input
+            type="checkbox"
+            id="checkbox"
+            v-model="checkboxValue"
+        /> -->
 		<input
 			type="checkbox"
 			id="checkbox"
@@ -25,6 +34,10 @@
 			true-value="Yes"
 			false-value="No"
 		/>
+		<!-- :checked="checkboxValue"
+            @change="event => (checkboxValue = event.target.checked)" -->
+
+		<hr>
 		<h3>checkbox values</h3>
 		<label>
 			<input type="checkbox" value="html" v-model="checkboxValues" />
@@ -42,6 +55,7 @@
 		<!-- :checked="checkboxValue"
 			@change="event => (checkboxValue = event.target.checked)" -->
 
+		<hr>
 		<h2>radio value</h2>
 		<label>
 			<input type="radio" name="type" value="O" v-model="radioValue" />
@@ -59,6 +73,7 @@
 			{{ radioValue }}
 		</div>
 
+		<hr>
 		<h2>select value</h2>
 		<!-- :value="selectValue"
 			@change="event => (selectValue = event.target.value)" -->
@@ -78,6 +93,7 @@ export default {
 	setup() {
 		const inputValue = ref('');
 		const textareaValue = ref('');
+		/* const checkboxValue = ref('true'); */ // 기본값도 변경해 줘야함
 		const checkboxValue = ref('Yes');
 		const checkboxValues = ref([]);
 		const radioValue = ref('O');
