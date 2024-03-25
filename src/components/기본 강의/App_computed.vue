@@ -31,6 +31,7 @@ export default {
         });
 
         const hasLecture = computed(()=>{
+			// 읽기 전용 속성으로 사용 할 수 있다. 
             console.log('computed');
             return teacher.lectures.length > 0 ? '있음😊' : '없음😢'
             // arrow function은 명령어가 하나일때는 return과 중괄호를 생략할 수 있다. 
