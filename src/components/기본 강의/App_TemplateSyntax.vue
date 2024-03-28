@@ -2,7 +2,8 @@
 	<div>
         <h2>보간법</h2>
         <p>{{ message1 }} : 이런식으로 사용하면 랜더링이 되는걸 알 수 있다.</p>
-        <p v-once>{{ message1 }} : 이런식으로 사용하면 랜더링이 되는걸 알 수 있다.</p>
+        <!-- v-once : 한번만 렌더링을 하고 데이터가 변경되도 갱신하지 않으려면 v-once를 사용한다.  -->
+        <p v-once>{{ message2 }} : 이런식으로 사용하면 랜더링이 되는걸 알 수 있다.</p>
         <button v-on:click="message1 = message1 + '!'">click!</button>
         <hr />
         <h2>HTML</h2>
