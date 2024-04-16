@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<title>Vite App</title>
+<style>
+    [v-cloak] { 
+        /* v-cloak을 가지고 있으면? 
+            display:none을 이용하여 {{ message }}인 상태는 안보이고, 
+            렌더링 된 후를 보여준다. 
+
+            이런걸 이용하여 빙글빙글 돌아가는 로딩바 등을 만들 수 있다. 
+        */
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <div id="app">
+        <p v-cloak>{{ message }}</p>
+    </div>
+    <script>
+        const App = {
+        data() {
+            return {
+            message: '안녕하세요'
+            }
+        }
+        }
+        // 3초 후 실행
+        setTimeout(() => {
+        Vue.createApp(App).mount('#app')
+        }, 3000)
+    </script>
+</body>
+</html>
