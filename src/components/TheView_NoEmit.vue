@@ -5,7 +5,6 @@
                 mybutton.vue 안에 아무런 이벤트를 정의하지 않았기 때문에 아래 MyButton 컴포넌트에서
                 어떤 이벤트를 사용하는 것은 이것도 non-prop 속성안에 들어간다는 것이다. 
             -->
-            <!-- <MyButton class="my-button" id="my-button" @click="sayBread"></MyButton> -->
             <MyButton class="my-button" id="my-button" @click="sayBread"></MyButton>
             <!--  
                 클릭이벤트가 잘 출력이 되는 이유는?
@@ -31,7 +30,7 @@
 </template>
 
 <script>
-import MyButton from './MyButton_NoEmit.vue';
+import MyButton from './MyButton.vue';
 import LabelInputNP from './LabelInput_Non-Prop.vue';
 export default {
     components : {

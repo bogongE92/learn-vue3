@@ -1,15 +1,16 @@
 <template>
 	<label 
-		class="child-class" 
-		style="border:1px solid blue"
+		class="form-label" 
 		id="child-id"
 	>
 		{{ label }} 
-		<input 
-			v-model="value"
-			type="text"
-		>
 	</label>
+	<input 
+		v-model="value"
+		v-bind="$attrs"
+		type="text"
+		class="form-control"
+	>
 </template>
 
 <script>
