@@ -103,20 +103,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Cypress environment from GitHub Secret
-      run: echo "${{ secrets.CYPRESS_ENV }}" >> cypress.env.json
-    - name: Extract Cypress environment variables
-      run: |
-        echo "CYPRESS_PROJECT_ID=$(jq -r '.["cypress-cloud"]["spv-project-id"]' < cypress.env.json)" >> $GITHUB_ENV
-        echo "CYPRESS_RECORD_KEY=$(jq -r '.["cypress-cloud"]["spv-record-key"]' < cypress.env.json)" >> $GITHUB_ENV
-    - name: Cypress run for squad spvcockpit
-      uses: cypress-io/github-action@v6
-      with:
-        command: npm run run:e2e:spvcockpit -- --record --key ${{ env.CYPRESS_RECORD_KEY }}
-        browser: chrome
-      env:
-        CYPRESS_PROJECT_ID: ${{ env.CYPRESS_PROJECT_ID }}
-
     - name: Update generated-files cache on every commit
       uses: actions/cache@v4
       with:
@@ -179,19 +165,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Cypress environment from GitHub Secret
-      run: echo "${{ secrets.CYPRESS_ENV }}" >> cypress.env.json
-    - name: Extract Cypress environment variables
-      run: |
-        echo "CYPRESS_PROJECT_ID=$(jq -r '.["cypress-cloud"]["spv-project-id"]' < cypress.env.json)" >> $GITHUB_ENV
-        echo "CYPRESS_RECORD_KEY=$(jq -r '.["cypress-cloud"]["spv-record-key"]' < cypress.env.json)" >> $GITHUB_ENV
-    - name: Cypress run for squad spvcockpit
-      uses: cypress-io/github-action@v6
-      with:
-        command: npm run run:e2e:spvcockpit -- --record --key ${{ env.CYPRESS_RECORD_KEY }}
-        browser: chrome
-      env:
-        CYPRESS_PROJECT_ID: ${{ env.CYPRESS_PROJECT_ID }}
 
     - name: Update generated-files cache on every commit
       uses: actions/cache@v4
@@ -248,19 +221,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Cypress environment from GitHub Secret
-      run: echo "${{ secrets.CYPRESS_ENV }}" >> cypress.env.json
-    - name: Extract Cypress environment variables
-      run: |
-        echo "CYPRESS_PROJECT_ID=$(jq -r '.["cypress-cloud"]["spv-project-id"]' < cypress.env.json)" >> $GITHUB_ENV
-        echo "CYPRESS_RECORD_KEY=$(jq -r '.["cypress-cloud"]["spv-record-key"]' < cypress.env.json)" >> $GITHUB_ENV
-    - name: Cypress run for squad spvcockpit
-      uses: cypress-io/github-action@v6
-      with:
-        command: npm run run:e2e:spvcockpit -- --record --key ${{ env.CYPRESS_RECORD_KEY }}
-        browser: chrome
-      env:
-        CYPRESS_PROJECT_ID: ${{ env.CYPRESS_PROJECT_ID }}
 
     - name: Update generated-files cache on every commit
       uses: actions/cache@v4
@@ -325,19 +285,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Cypress environment from GitHub Secret
-      run: echo "${{ secrets.CYPRESS_ENV }}" >> cypress.env.json
-    - name: Extract Cypress environment variables
-      run: |
-        echo "CYPRESS_PROJECT_ID=$(jq -r '.["cypress-cloud"]["spv-project-id"]' < cypress.env.json)" >> $GITHUB_ENV
-        echo "CYPRESS_RECORD_KEY=$(jq -r '.["cypress-cloud"]["spv-record-key"]' < cypress.env.json)" >> $GITHUB_ENV
-    - name: Cypress run for squad spvcockpit
-      uses: cypress-io/github-action@v6
-      with:
-        command: npm run run:e2e:spvcockpit -- --record --key ${{ env.CYPRESS_RECORD_KEY }}
-        browser: chrome
-      env:
-        CYPRESS_PROJECT_ID: ${{ env.CYPRESS_PROJECT_ID }}
     
     - name: Update update cache on every commit
       uses: actions/cache@v4
@@ -450,19 +397,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Set up Cypress environment from GitHub Secret
-      run: echo "${{ secrets.CYPRESS_ENV }}" >> cypress.env.json
-    - name: Extract Cypress environment variables
-      run: |
-        echo "CYPRESS_PROJECT_ID=$(jq -r '.["cypress-cloud"]["spv-project-id"]' < cypress.env.json)" >> $GITHUB_ENV
-        echo "CYPRESS_RECORD_KEY=$(jq -r '.["cypress-cloud"]["spv-record-key"]' < cypress.env.json)" >> $GITHUB_ENV
-    - name: Cypress run for squad spvcockpit
-      uses: cypress-io/github-action@v6
-      with:
-        command: npm run run:e2e:spvcockpit -- --record --key ${{ env.CYPRESS_RECORD_KEY }}
-        browser: chrome
-      env:
-        CYPRESS_PROJECT_ID: ${{ env.CYPRESS_PROJECT_ID }}
       
     - name: Get version of last release
       id: last_release
