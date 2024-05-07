@@ -1,14 +1,14 @@
 <template>
 	<main>
-        <TemplateRef></TemplateRef> 
+        <ScriptSetup></ScriptSetup> 
     </main>
 </template>
 
 <script>
-import TemplateRef from "@/components/TemplateRef.vue"
+import ScriptSetup from "./ScriptSetup.vue"
 export default {
 	components : {
-        TemplateRef
+        ScriptSetup
     },
     setup() {
 		return {};
