@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import TheNav from '@/components/TheNav.vue';
-import TheView from '@/components/TheView.vue';
+import TheNav from '@/basic/components/component study/TheNav.vue';
+import TheView from '@/basic/components/component study/TheView.vue';
 
 export default {
 	/* 
