@@ -4,7 +4,7 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 module.exports = {
 	root: true,
 	extends: [
-		'plugin:vue/vue3-essential',
+		'plugin:prettier/recommended',
 		'eslint:recommended',
 		'@vue/eslint-config-prettier/skip-formatting'
 	],
@@ -19,7 +19,7 @@ module.exports = {
 	rules: {
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-unused-vars': 'off',
-		/* 'prettier/prettier': [
+		'prettier/prettier': [
 			'error',
 			{
 				singleQuote: true, // single 쿼테이션 사용 여부
@@ -31,6 +31,6 @@ module.exports = {
 				bracketSpacing: false, // 객체 리터럴에서 괄호에 공백 삽입 여부 
 				arrowParens: 'avoid', // 화살표 함수 괄호 사용 방식
 			},
-		], */
+		],
 	},
 }
