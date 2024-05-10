@@ -16,8 +16,8 @@ export default {
 			components: {}, {}안에 적어준다.
 		3. 사용할 때는 템플릿 안에서 사용할 수 있다. 
 	*/
-	
-	components:{
+
+	components: {
 		TheNav,
 		TheView, // 원래는 이렇게 씀 TheView : TheView  -> 키랑 값이 같다면 단축표현이 가능하다. 
 	},
